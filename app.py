@@ -20,7 +20,7 @@ def add_to_table(inp):
         #print(lt,subject)
         return "{\"data\" : "+str(kunit.add(listOfTable,subject)).replace(" ","")+"}"
     except:
-        return "invalid syntax (read API DOC in trello)"
+        return "invalid syntax (API Doc in -> https://github.com/WisTiCeJEnT/Kunit-backend)"
     #return "still alive"
 
 @app.route('/remove/<inp>')
@@ -31,17 +31,17 @@ def del_from_table(inp):
         listOfTable = eval(table)
         return "{\"data\" : "+str(kunit.remove(listOfTable,subject)).replace(" ","")+"}"
     except:
-        return "invalid syntax (read API DOC in trello)"
+        return "invalid syntax (API Doc in -> https://github.com/WisTiCeJEnT/Kunit-backend)"
 
 @app.route('/unitOf/<inp>')
 def unit_of_major(inp):
     try:
         return "{\"data\" : "+str(major.unitOf(inp)).replace(" ","")+"}"
     except:
-        return "invalid syntax (read API DOC in trello)"
+        return "invalid syntax (API Doc in -> https://github.com/WisTiCeJEnT/Kunit-backend)"
 
 @app.route('/new')
-def new_data_struture():
+def new_data_struture(): #New KUDS
     return "[[0,0,0,0,0,0],[],[],[],[],[]]"
 
 if __name__ == "__main__":
