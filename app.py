@@ -40,5 +40,9 @@ def unit_of_major(inp):
     except:
         return "invalid syntax (read API DOC in trello)"
 
+@app.route('/new')
+def new_data_struture():
+    return "[[0,0,0,0,0,0],[],[],[],[],[]]"
+
 if __name__ == "__main__":
     app.run(debug = True,host="0.0.0.0")
