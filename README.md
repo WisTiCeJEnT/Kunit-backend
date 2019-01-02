@@ -11,9 +11,9 @@ Return a empty KUDS
 #### Adding subject to KUDS
         GET : URL/add/{subjectID}a{oldKUDS}
 Return a new categorized KUDS
-#### Removing subject to KUDS
+#### Removing subject from KUDS
         GET : URL/remove/{subjectID}d{oldKUDS}
 Return a new categorized KUDS
-#### Unit per major
+#### Required unit of each major
         GET : URL/unitOf/{majorID}
 Return list of integer in json format. The list is ordered by Wellness,Entrepreneurship,Thai Citizen and Global Citizen,Language and Communicationand Aesthetics
