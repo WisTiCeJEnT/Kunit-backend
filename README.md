@@ -9,10 +9,10 @@ Replace "URL" with "https://kunit-backend.herokuapp.com" if you want to use our 
         GET : URL/new
 Return a empty KUDS
 #### Adding subject to KUDS
-        GET : URL/add/{subjectID}a{oldKUDS}
+        GET : URL/add/{oldKUDS}a{subjectID}
 Return a new categorized KUDS
 #### Removing subject from KUDS
-        GET : URL/remove/{subjectID}d{oldKUDS}
+        GET : URL/remove/{oldKUDS}d{subjectID}
 Return a new categorized KUDS
 #### Required unit of each major
         GET : URL/unitOf/{majorID}
