@@ -36,7 +36,7 @@ def del_from_table(inp):
 @app.route('/unitOf/<inp>')
 def unit_of_major(inp):
     try:
-        return "{\"data\" : "+str(major.unitOf(inp)).replace(" ","")+"}"
+        return "{\"data\" : "+str(major.unitOf(inp.lower())).replace(" ","")+"}"
     except:
         return "invalid syntax (API Doc in -> https://github.com/WisTiCeJEnT/Kunit-backend)"
 
