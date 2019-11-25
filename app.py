@@ -1,7 +1,8 @@
 import kunit
-from flask import Flask
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 import major
+import firebase_api
 
 app = Flask(__name__)
 CORS(app)
@@ -43,6 +44,21 @@ def unit_of_major(inp):
 @app.route('/new')
 def new_data_struture(): #New KUDS
     return "[[0,0,0,0,0,0],[],[],[],[],[]]"
+
+@app.route('/newUpdateRequest', methods = ['POST'])
+def new_update_request(): #Add update request to firebase
+    try:
+        data = request.json
+        request_key = firebase_api.add_update_request(data)
+        return jsonify({
+            "status": "ok",
+            "request_key": str(request_key)
+            })
+    except Exception as e: 
+        return jsonify({
+            "status": "error",
+            "detail": str(e)
+        }) 
 
 if __name__ == "__main__":
     app.run(debug = True,host="0.0.0.0")
